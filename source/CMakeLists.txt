@@ -533,7 +533,7 @@ if(USE_MIMALLOC)
     find_package(mimalloc REQUIRED)
     add_definitions(-DUSE_MIMALLOC)
     list(APPEND PLATFORM_LIBS mimalloc-static)
-    include_directories(${MIMALLOC_INCLUDE_DIRECTORIES})
+    include_directories(${MIMALLOC_INCLUDE_DIR})
 endif()
 
 add_subdirectory(encoder)
