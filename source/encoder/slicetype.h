@@ -134,6 +134,8 @@ public:
     int           m_numRowsPerSlice;
     int           m_inputCount;
     double        m_cuTreeStrength;
+    double        m_cuTreeMinQpOffset;
+    double        m_cuTreeMaxQpOffset;
 
     /* HME */
     int           m_4x4Width;

@@ -1,12 +1,6 @@
 name: Build
 
-on:
-  push:
-  workflow_dispatch:
-    inputs:
-      tag:
-        description: 'which tag to upload to'
-        default: ''
+on: [workflow_dispatch]
 
 jobs:
   build:
@@ -48,7 +42,7 @@ jobs:
       uses: actions/cache@v2
       with:
         path: ffmpeg
-        key: ${{matrix.target_cpu}}-${{matrix.toolchain}}-ff
+        key: ${{matrix.target_cpu}}-${{matrix.toolchain}}-ff-v2
     - name: Checkout FFmpeg
       uses: actions/checkout@v2
       with:
