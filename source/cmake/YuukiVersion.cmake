@@ -12,9 +12,9 @@ execute_process(COMMAND
     )
 
 if("${MOD_BUILD}" STREQUAL "Yuuki")
-    set(X265_BASE_BRANCH "stable")
+    set(X265_BASE_BRANCH "Yuuki")
 else()
-    set(X265_BASE_BRANCH "old-stable")
+    set(X265_BASE_BRANCH "Yuuki")
 endif()
 
 execute_process(COMMAND
@@ -30,6 +30,18 @@ execute_process(COMMAND
 	OUTPUT_VARIABLE X265_HEAD_HASH
         ERROR_QUIET OUTPUT_STRIP_TRAILING_WHITESPACE
     )
+
+if(NOT DEFINED ${X265_HEAD_TAG})
+  set(X265_HEAD_TAG 0.0-000-0000000000)
+endif()
+
+if(NOT DEFINED ${X265_BASE_TAG})
+  set(X265_BASE_TAG 0.0-000-0000000000)
+endif()
+
+if(NOT DEFINED ${X265_HEAD_HASH})
+  set(X265_HEAD_HASH "000000000")
+endif()
 
 string(REPLACE "-" ";" X265_HEAD_TAG_ARR ${X265_HEAD_TAG})
 string(REPLACE "-" ";" X265_BASE_TAG_ARR ${X265_BASE_TAG})
