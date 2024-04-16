@@ -101,7 +101,7 @@ jobs:
     - name: Setup build dir
       run: mkdir -p build/8b build/10b build/12b
     - name: Download profdata
-      run: iwr https://github.com/${{github.repository}}/raw/profdata/x265.profdata -OutFile x265.profdata
+      run: iwr https://github.com/${{github.repository}}/raw/Yuuki/x265.profdata -OutFile x265.profdata
       shell: pwsh
     - name: Compile x265 8bit
       run: |
